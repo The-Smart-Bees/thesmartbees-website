@@ -1,0 +1,351 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<!-- S4: EDITORIAL / PORTRAIT-FIRST — split hero, founder-led, magazine feel -->
+
+<style is:global>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&display=swap');
+
+  :root {
+    --color-bg-page: #ffffff;
+    --color-bg-soft: #f9f9f7;
+    --color-bg-card: #ffffff;
+    --color-text-primary: #111111;
+    --color-text-secondary: #444444;
+    --color-text-tertiary: #888888;
+    --color-text-muted: #bbbbbb;
+    --color-border: #e8e8e8;
+    --color-primary: #111111;
+    --color-primary-hover: #000000;
+  }
+
+  body { background: #fff; }
+
+  .playfair { font-family: 'Playfair Display', Georgia, serif; }
+
+  .s4-header {
+    background: white !important;
+    border-bottom: 1px solid #e8e8e8 !important;
+  }
+
+  .s4-hero-portrait {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+
+  .s4-pull-quote {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.25rem;
+    font-style: italic;
+    color: #444;
+    border-left: 3px solid #111;
+    padding-left: 20px;
+    line-height: 1.6;
+  }
+
+  .s4-overline {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #999;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .s4-rule {
+    width: 40px;
+    height: 2px;
+    background: #111;
+    margin: 16px 0;
+  }
+
+  .s4-metric {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #111;
+    line-height: 1;
+  }
+
+  .s4-result-card {
+    border: 1px solid #e8e8e8;
+    border-radius: 0;
+    padding: 40px;
+  }
+
+  .s4-step-label {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 4rem;
+    font-weight: 900;
+    color: #f0f0f0;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+</style>
+
+<Layout title="TheSmartBees — Automation Built by Someone Who's Done It">
+
+  <header class="s4-header fixed top-0 left-0 right-0 z-50">
+    <nav class="max-w-6xl mx-auto px-8 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2 font-semibold tracking-tight text-text-primary">
+        <img src="/bee-logo.png" alt="TheSmartBees" class="h-6 w-6 object-contain" />
+        TheSmartBees
+      </a>
+      <div class="hidden md:flex items-center gap-10">
+        <a href="#services" class="text-sm text-text-tertiary hover:text-text-primary transition-colors">Services</a>
+        <a href="#case-studies" class="text-sm text-text-tertiary hover:text-text-primary transition-colors">Results</a>
+        <a href="#how-it-works" class="text-sm text-text-tertiary hover:text-text-primary transition-colors">Process</a>
+        <a href="#about" class="text-sm text-text-tertiary hover:text-text-primary transition-colors">About</a>
+        <a
+          href="https://calendly.com/thesmartbees/60mn-1-1-meeting"
+          target="_blank" rel="noopener"
+          class="bg-text-primary text-white text-sm font-medium px-5 py-2 hover:opacity-80 transition-opacity"
+        >Book a Call</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO: SPLIT — portrait left, text right -->
+    <section class="pt-16 min-h-screen flex flex-col md:flex-row">
+      <!-- Portrait side -->
+      <div class="w-full md:w-1/2 bg-bg-soft relative" style="min-height:500px">
+        <img
+          src="/portrait.jpeg"
+          alt="Antoine Miniconi"
+          class="s4-hero-portrait absolute inset-0 w-full h-full"
+          style="object-position:center top"
+        />
+        <!-- Overlay caption -->
+        <div class="absolute bottom-0 left-0 right-0 p-8" style="background:linear-gradient(to top,rgba(0,0,0,0.7),transparent)">
+          <p class="text-white text-sm font-medium">Antoine Miniconi — Founder, TheSmartBees</p>
+          <p class="text-white/60 text-xs mt-1">$1M+ in revenue built with the systems we sell</p>
+        </div>
+      </div>
+
+      <!-- Text side -->
+      <div class="w-full md:w-1/2 flex items-center px-10 md:px-16 py-20 md:py-0">
+        <div class="max-w-lg">
+          <span class="s4-overline">B2B Automation</span>
+          <h1 class="playfair text-5xl md:text-6xl font-black leading-[1.08] text-text-primary fade-in">
+            Your team is<br/>drowning in work<br/>that shouldn't<br/>exist.
+          </h1>
+          <div class="s4-rule"></div>
+          <p class="text-text-secondary leading-relaxed text-lg mb-8 fade-in">
+            Manual prospecting. Repetitive data entry. Follow-ups nobody tracks.
+            These are system problems. We build the systems that eliminate them —
+            because we've run them ourselves.
+          </p>
+          <a
+            href="https://calendly.com/thesmartbees/60mn-1-1-meeting"
+            target="_blank" rel="noopener"
+            class="inline-flex items-center gap-3 bg-text-primary text-white font-medium px-8 py-4 hover:opacity-80 transition-opacity fade-in"
+          >
+            Book a 15-Minute Call
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+          <p class="text-text-muted text-sm mt-4">No pitch. Just a conversation.</p>
+
+          <!-- Stats -->
+          <div class="mt-12 flex gap-10 pt-10 border-t border-border fade-in">
+            <div>
+              <div class="s4-metric">$750K</div>
+              <p class="text-text-tertiary text-sm mt-1">saved for one client</p>
+            </div>
+            <div>
+              <div class="s4-metric">$1M+</div>
+              <p class="text-text-tertiary text-sm mt-1">our own revenue</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-24 bg-bg-soft">
+      <div class="max-w-6xl mx-auto px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+          <div>
+            <span class="s4-overline">What We Do</span>
+            <h2 class="playfair text-3xl md:text-4xl font-bold text-text-primary leading-tight">
+              Two ways we give your team their time back.
+            </h2>
+          </div>
+          <div>
+            <h3 class="font-bold text-text-primary mb-3">Lead Generation</h3>
+            <div class="s4-rule" style="width:24px"></div>
+            <p class="text-text-secondary leading-relaxed mb-6 text-sm">
+              Prospect identification, data enrichment, personalized outreach, and follow-up sequences —
+              automated end to end. Your pipeline fills while your team focuses elsewhere.
+            </p>
+            <ul class="space-y-2">
+              {["ICP-based prospecting", "Personalized outreach at scale", "Automated follow-ups", "Real-time pipeline updates"].map(f => (
+                <li class="text-text-secondary text-sm flex items-start gap-2">
+                  <span class="text-text-muted">→</span> {f}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold text-text-primary mb-3">Workflow Automation</h3>
+            <div class="s4-rule" style="width:24px"></div>
+            <p class="text-text-secondary leading-relaxed mb-6 text-sm">
+              We map your manual workflows, identify the highest-cost processes, and replace them
+              with systems. Cost-impact estimates before we start, tracked results after we deploy.
+            </p>
+            <ul class="space-y-2">
+              {["Workflow audit and ROI analysis", "Cross-department automation", "ERP and CRM integration", "Automated reporting"].map(f => (
+                <li class="text-text-secondary text-sm flex items-start gap-2">
+                  <span class="text-text-muted">→</span> {f}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CASE STUDIES: editorial horizontal layout -->
+    <section id="case-studies" class="py-24">
+      <div class="max-w-6xl mx-auto px-8">
+        <span class="s4-overline">Proof</span>
+        <h2 class="playfair text-3xl md:text-4xl font-bold text-text-primary mb-16 max-w-xl">
+          Two systems built and deployed. Both with documented results.
+        </h2>
+
+        <div class="space-y-0 divide-y divide-border">
+          {[
+            {
+              tag: "Client Project", title: "Industrial Jewelry Manufacturer", metric: "$750K+", label: "operational savings",
+              body: "Every department on manual spreadsheets — database, logistics, inventory, CRM, product catalogs. Growth was physically limited by how much the team could manage. We built a complete automation suite. $750K in operational savings. What used to take days runs autonomously."
+            },
+            {
+              tag: "Our Own Systems", title: "Automated B2B Sales Pipeline", metric: "$1M+", label: "in closed revenue",
+              body: "We ran this before we offered it. Automated prospecting, enrichment, outreach, follow-up, and pipeline management. Over $1M in B2B revenue closed. We include this because the system we build for clients is the same system we rely on for our own revenue."
+            }
+          ].map(cs => (
+            <div class="py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+              <div>
+                <span class="s4-overline">{cs.tag}</span>
+                <div class="s4-metric">{cs.metric}</div>
+                <p class="text-text-tertiary text-sm mt-2">{cs.label}</p>
+              </div>
+              <div class="md:col-span-3 flex flex-col justify-center">
+                <h3 class="playfair text-2xl font-bold text-text-primary mb-4">{cs.title}</h3>
+                <p class="text-text-secondary leading-relaxed">{cs.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how-it-works" class="py-24 bg-bg-soft">
+      <div class="max-w-6xl mx-auto px-8">
+        <span class="s4-overline">Process</span>
+        <h2 class="playfair text-3xl md:text-4xl font-bold text-text-primary mb-16 max-w-lg">
+          From first call to running system — in weeks.
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+          {[
+            { n: "I", title: "Discovery Call", sub: "15 minutes", desc: "You describe your workflows and pain points. We identify the automation opportunities and give you an honest picture of what's possible and what it costs." },
+            { n: "II", title: "Automation Roadmap", sub: "Written and agreed", desc: "A documented plan with deliverables, timelines, and cost-impact estimates for each opportunity. You approve before anything starts." },
+            { n: "III", title: "Build & Deploy", sub: "Weeks to results", desc: "We build the system, deploy it in your environment, and monitor performance. We stay until it works reliably." },
+          ].map(s => (
+            <div>
+              <div class="s4-step-label">{s.n}</div>
+              <h3 class="font-bold text-text-primary mb-1">{s.title}</h3>
+              <p class="text-xs text-text-muted uppercase tracking-wider mb-4">{s.sub}</p>
+              <p class="text-text-secondary leading-relaxed text-sm">{s.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- PULL QUOTE / ABOUT -->
+    <section id="about" class="py-24">
+      <div class="max-w-6xl mx-auto px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div>
+            <span class="s4-overline">Who We Are</span>
+            <p class="s4-pull-quote mt-4">
+              "Before we offered this as a service, we ran it. The systems we build for clients
+              are the same ones we rely on for our own revenue."
+            </p>
+            <div class="mt-10 flex items-start gap-6">
+              <img src="/portrait.jpeg" alt="Antoine Miniconi" class="w-16 h-16 rounded-full object-cover object-top shrink-0" />
+              <div>
+                <p class="font-bold text-text-primary">Antoine Miniconi</p>
+                <p class="text-text-tertiary text-sm mt-1">Founder — Built $1M+ in revenue with automated B2B systems before turning them into a service.</p>
+              </div>
+            </div>
+            <p class="mt-8 text-text-secondary leading-relaxed">
+              A small team. No account managers, no layers of overhead. You work directly with
+              the person who designs and builds your system.
+            </p>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            {[
+              { n: "$750K+", l: "Saved for one client" },
+              { n: "$1M+", l: "Our own B2B revenue" },
+              { n: "Weeks", l: "Typical time to deployment" },
+              { n: "Direct", l: "No account managers" },
+            ].map(s => (
+              <div class="s4-result-card">
+                <div class="playfair text-3xl font-bold text-text-primary">{s.n}</div>
+                <p class="text-text-tertiary text-sm mt-2">{s.l}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 bg-text-primary">
+      <div class="max-w-6xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="playfair text-4xl md:text-5xl font-black text-white leading-tight">
+            Let's talk about what's worth automating in your business.
+          </h2>
+        </div>
+        <div>
+          <p class="text-white/70 leading-relaxed mb-8">
+            15 minutes. We'll walk through your workflows, identify the biggest opportunities,
+            and give you an honest assessment — regardless of whether we work together.
+          </p>
+          <a
+            href="https://calendly.com/thesmartbees/60mn-1-1-meeting"
+            target="_blank" rel="noopener"
+            class="inline-flex items-center gap-3 bg-white text-text-primary font-semibold px-8 py-4 hover:opacity-90 transition-opacity"
+          >
+            Book a Free 15-Minute Call
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-border py-8">
+    <div class="max-w-6xl mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-text-muted">&copy; {new Date().getFullYear()} TheSmartBees. All rights reserved.</p>
+      <div class="flex items-center gap-6">
+        <a href="https://wa.me/525525192812" target="_blank" rel="noopener" class="text-sm text-text-muted hover:text-text-primary transition-colors">WhatsApp</a>
+        <a href="mailto:antoine@thesmartbees.com" class="text-sm text-text-muted hover:text-text-primary transition-colors">Email</a>
+      </div>
+    </div>
+  </footer>
+</Layout>

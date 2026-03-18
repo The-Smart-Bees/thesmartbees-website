@@ -1,0 +1,42 @@
+---
+const steps = [
+  {
+    number: "01",
+    title: "Discovery Call",
+    subtitle: "15 minutes",
+    description: "We'll ask about your workflows, where your team spends the most time, and what outcomes matter most. No pitch, just a conversation.",
+  },
+  {
+    number: "02",
+    title: "Automation Roadmap",
+    subtitle: "Tailored to your business",
+    description: "We map every automation opportunity, estimate the time and cost impact, and propose a concrete plan with clear deliverables and timelines.",
+  },
+  {
+    number: "03",
+    title: "Build, Deploy, Monitor",
+    subtitle: "Weeks, not months",
+    description: "We build the system, deploy it in your environment, and monitor it until it runs reliably. You see results quickly, and we stay available for adjustments.",
+  },
+];
+---
+
+<section id="how-it-works" class="py-20 md:py-28 border-t border-border">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16 fade-in">
+      <h2 class="text-3xl md:text-4xl font-bold text-text-primary">How It Works</h2>
+      <p class="mt-4 text-lg text-text-secondary">From first call to running system, in weeks.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 fade-in-stagger">
+      {steps.map((step) => (
+        <div class="fade-in">
+          <div class="border border-border rounded-2xl p-8 hover:shadow-md transition-all duration-300 h-full">
+            <p class="text-xs font-medium text-text-muted uppercase tracking-wider mb-2">{step.subtitle}</p>
+            <h3 class="text-xl font-bold text-text-primary mb-3">{step.title}</h3>
+            <p class="text-text-secondary leading-relaxed">{step.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

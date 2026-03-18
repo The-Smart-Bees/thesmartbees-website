@@ -1,0 +1,318 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!-- S1: BOLD DARK TECH — black bg, purple/blue gradient glow, oversized type -->
+
+<style is:global>
+  :root {
+    --color-bg-page: #07070a;
+    --color-bg-soft: #0f0f14;
+    --color-bg-card: #0f0f14;
+    --color-text-primary: #ffffff;
+    --color-text-secondary: rgba(255,255,255,0.65);
+    --color-text-tertiary: rgba(255,255,255,0.4);
+    --color-text-muted: rgba(255,255,255,0.3);
+    --color-border: rgba(255,255,255,0.08);
+    --color-border-strong: rgba(255,255,255,0.15);
+    --color-primary: #7c3aed;
+    --color-primary-hover: #6d28d9;
+  }
+
+  body { background-color: #07070a; }
+
+  .glow-hero {
+    position: relative;
+    overflow: hidden;
+  }
+  .glow-hero::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 600px;
+    background: radial-gradient(ellipse at center, rgba(124,58,237,0.25) 0%, rgba(59,130,246,0.1) 40%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .glow-hero > * { position: relative; z-index: 1; }
+
+  .stat-number {
+    background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.7) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .feature-pill {
+    background: rgba(124,58,237,0.15);
+    border: 1px solid rgba(124,58,237,0.3);
+    border-radius: 4px;
+    padding: 2px 10px;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(167,139,250,1);
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+
+  .dark-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .dark-card:hover {
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(124,58,237,0.4);
+  }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(167,139,250,0.8);
+    margin-bottom: 16px;
+  }
+
+  /* Override header for dark */
+  header {
+    background: rgba(7,7,10,0.9) !important;
+    border-color: rgba(255,255,255,0.06) !important;
+  }
+  footer {
+    border-color: rgba(255,255,255,0.06) !important;
+  }
+</style>
+
+<Layout title="TheSmartBees — Automated Revenue Infrastructure">
+  <!-- HEADER dark version -->
+  <header class="fixed top-0 left-0 right-0 z-50 border-b backdrop-blur-md" style="background:rgba(7,7,10,0.92);border-color:rgba(255,255,255,0.07)">
+    <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2 text-lg font-bold tracking-tight text-white">
+        <img src="/bee-logo.png" alt="TheSmartBees" class="h-7 w-7 object-contain" />
+        TheSmartBees
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#services" class="text-sm text-text-tertiary hover:text-white transition-colors">Services</a>
+        <a href="#case-studies" class="text-sm text-text-tertiary hover:text-white transition-colors">Results</a>
+        <a href="#how-it-works" class="text-sm text-text-tertiary hover:text-white transition-colors">How It Works</a>
+        <a href="#about" class="text-sm text-text-tertiary hover:text-white transition-colors">About</a>
+        <a
+          href="https://calendly.com/thesmartbees/60mn-1-1-meeting"
+          target="_blank" rel="noopener"
+          class="bg-primary hover:bg-primary-hover text-white text-sm font-medium px-5 py-2 rounded-full transition-colors"
+        >Get Started</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="glow-hero pt-40 pb-28 md:pt-52 md:pb-36">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <div class="feature-pill">Automation Infrastructure</div>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight text-white fade-in">
+          Your Team Is Drowning<br/>in Work That<br/>Shouldn't Exist.
+        </h1>
+        <p class="mt-8 text-lg md:text-xl text-text-secondary leading-relaxed max-w-2xl mx-auto fade-in">
+          Manual prospecting. Repetitive data work. Follow-ups that fall through.
+          We replace all of it with automated systems that run continuously —
+          so your team focuses on what actually moves the business forward.
+        </p>
+        <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 fade-in">
+          <a
+            href="https://calendly.com/thesmartbees/60mn-1-1-meeting"
+            target="_blank" rel="noopener"
+            class="inline-flex items-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold px-8 py-4 rounded-full transition-colors text-base"
+          >
+            Book a 15-Minute Call
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+          <span class="text-sm text-text-muted">No pitch. Just a straight conversation.</span>
+        </div>
+
+        <!-- Stats row -->
+        <div class="mt-20 grid grid-cols-2 gap-px bg-white/5 rounded-2xl overflow-hidden max-w-lg mx-auto fade-in">
+          <div class="bg-bg-page px-8 py-6 text-left">
+            <div class="stat-number text-4xl font-extrabold">$750K+</div>
+            <p class="text-text-tertiary text-sm mt-1">operational savings<br/>for clients</p>
+          </div>
+          <div class="bg-bg-page px-8 py-6 text-left">
+            <div class="stat-number text-4xl font-extrabold">$1M+</div>
+            <p class="text-text-tertiary text-sm mt-1">revenue via our<br/>own systems</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-24 border-t border-border">
+      <div class="max-w-6xl mx-auto px-6">
+        <p class="section-label text-center">What We Build</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-16">Two Systems. Both Measured in Results.</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="dark-card p-8">
+            <div class="w-10 h-10 rounded-lg bg-purple-600/20 flex items-center justify-center mb-6">
+              <svg class="w-5 h-5 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Lead Generation Pipeline</h3>
+            <p class="text-text-tertiary text-sm mb-6">Prospecting to booked meetings — automated end-to-end</p>
+            <p class="text-text-secondary leading-relaxed mb-8">
+              We build a system that finds your ideal prospects, enriches their data, sends personalized
+              outreach, and follows up automatically. Your pipeline fills continuously without anyone manually pushing it.
+            </p>
+            <ul class="space-y-3">
+              {["ICP-based prospect identification", "Personalized outreach at scale", "Automated follow-up sequences", "Real-time CRM pipeline updates"].map(f => (
+                <li class="flex items-center gap-3 text-text-secondary text-sm">
+                  <span class="w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                  {f}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div class="dark-card p-8">
+            <div class="w-10 h-10 rounded-lg bg-blue-600/20 flex items-center justify-center mb-6">
+              <svg class="w-5 h-5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Workflow Automation</h3>
+            <p class="text-text-tertiary text-sm mb-6">Manual operations replaced with systems that run themselves</p>
+            <p class="text-text-secondary leading-relaxed mb-8">
+              We map your highest-cost manual workflows and automate them. Every project starts with
+              a time-and-cost impact estimate so you know the ROI before we touch anything.
+            </p>
+            <ul class="space-y-3">
+              {["Cross-department workflow integration", "ERP, CRM, and inventory automation", "Automated reporting and data sync", "Cost-impact analysis before we build"].map(f => (
+                <li class="flex items-center gap-3 text-text-secondary text-sm">
+                  <span class="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0"></span>
+                  {f}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section id="case-studies" class="py-24 bg-bg-soft">
+      <div class="max-w-6xl mx-auto px-6">
+        <p class="section-label text-center">Proof</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-16">Real Deployments. Documented Results.</h2>
+        <div class="space-y-6">
+          {[
+            {
+              tag: "Client", title: "Industrial Jewelry Manufacturer", metric: "$750K+", label: "operational savings",
+              text: "A manufacturer running every department on spreadsheets. We built a complete automation infrastructure — centralized database, automated logistics, ERP workflows, CRM pipelines, live product catalogs. $750K in operational savings recovered. Day-long manual processes now run autonomously."
+            },
+            {
+              tag: "Our Own", title: "Automated B2B Sales Pipeline", metric: "$1M+", label: "in closed revenue",
+              text: "We ran this system for ourselves before offering it to clients. Automated prospecting, enrichment, outreach, and follow-up. Over $1M in B2B revenue closed. We include this because we run what we sell — it's not a demo, it's our production pipeline."
+            }
+          ].map(cs => (
+            <div class="dark-card p-8 md:p-10">
+              <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/3">
+                  <span class="feature-pill">{cs.tag}</span>
+                  <h3 class="text-xl font-bold text-white mt-2">{cs.title}</h3>
+                  <div class="mt-4">
+                    <div class="stat-number text-5xl font-extrabold">{cs.metric}</div>
+                    <p class="text-text-tertiary text-sm mt-1">{cs.label}</p>
+                  </div>
+                </div>
+                <div class="md:w-2/3 flex items-center">
+                  <p class="text-text-secondary leading-relaxed">{cs.text}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how-it-works" class="py-24 border-t border-border">
+      <div class="max-w-6xl mx-auto px-6">
+        <p class="section-label text-center">Process</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-4">Three Steps. Weeks to Results.</h2>
+        <p class="text-text-secondary text-center mb-16">No discovery theater. No bloated decks. We move fast.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[
+            { n: "01", title: "15-Minute Call", desc: "You describe your workflows and bottlenecks. We tell you what's automatable and give you a rough ROI estimate. No sales pitch." },
+            { n: "02", title: "Automation Blueprint", desc: "We document every opportunity with deliverables, timelines, and cost-impact estimates. You approve before anything starts." },
+            { n: "03", title: "Build & Deploy", desc: "We build the system, deploy in your environment, monitor performance, and stay accountable to results." },
+          ].map(s => (
+            <div class="dark-card p-8">
+              <p class="text-5xl font-extrabold text-white/10 mb-4 font-mono">{s.n}</p>
+              <h3 class="text-lg font-bold text-white mb-3">{s.title}</h3>
+              <p class="text-text-secondary leading-relaxed text-sm">{s.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-24 bg-bg-soft">
+      <div class="max-w-3xl mx-auto px-6">
+        <p class="section-label text-center">Who We Are</p>
+        <div class="dark-card p-10 mt-8">
+          <div class="flex items-start gap-6">
+            <img src="/portrait.jpeg" alt="Antoine Miniconi" class="w-20 h-20 rounded-full object-cover object-top shrink-0" />
+            <div>
+              <h3 class="text-xl font-bold text-white mb-3">Antoine Miniconi</h3>
+              <p class="text-text-secondary leading-relaxed">
+                Built automated B2B sales infrastructure that generated over $1M in revenue before turning
+                the same systems into a service. No account managers. No layers. You work directly with the
+                person who designs and builds your system — someone who's run these systems on their own business.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 border-t border-border glow-hero">
+      <div class="max-w-3xl mx-auto px-6 text-center">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6">
+          Ready to Stop<br/>Doing a Computer's Job?
+        </h2>
+        <p class="text-text-secondary text-lg mb-10">
+          15 minutes. We'll identify the biggest automation opportunities in your business
+          and tell you straight what it would take to fix them.
+        </p>
+        <a
+          href="https://calendly.com/thesmartbees/60mn-1-1-meeting"
+          target="_blank" rel="noopener"
+          class="inline-flex items-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold px-10 py-4 rounded-full transition-colors text-base"
+        >
+          Book My Free Call
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t py-8" style="border-color:rgba(255,255,255,0.07)">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-text-muted">&copy; {new Date().getFullYear()} TheSmartBees. All rights reserved.</p>
+      <div class="flex items-center gap-6">
+        <a href="https://wa.me/525525192812" target="_blank" rel="noopener" class="text-sm text-text-muted hover:text-white transition-colors">WhatsApp</a>
+        <a href="mailto:antoine@thesmartbees.com" class="text-sm text-text-muted hover:text-white transition-colors">Email</a>
+      </div>
+    </div>
+  </footer>
+</Layout>

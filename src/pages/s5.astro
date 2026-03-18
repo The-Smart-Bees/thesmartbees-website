@@ -1,0 +1,334 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<!-- S5: MONOCHROME MINIMAL — pure black/white, maximum whitespace, typography-only -->
+
+<style is:global>
+  :root {
+    --color-bg-page: #ffffff;
+    --color-bg-soft: #fafafa;
+    --color-bg-card: #ffffff;
+    --color-text-primary: #000000;
+    --color-text-secondary: #333333;
+    --color-text-tertiary: #888888;
+    --color-text-muted: #cccccc;
+    --color-border: #e8e8e8;
+    --color-primary: #000000;
+    --color-primary-hover: #111111;
+  }
+
+  body { background: #fff; }
+
+  .s5-header {
+    background: white !important;
+    border-bottom: 1px solid #e8e8e8 !important;
+  }
+
+  .s5-headline {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 900;
+    line-height: 1.0;
+    letter-spacing: -0.04em;
+    color: #000;
+  }
+
+  .s5-overline {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #bbb;
+    display: block;
+    margin-bottom: 24px;
+  }
+
+  .s5-metric {
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    color: #000;
+    line-height: 1;
+  }
+
+  .s5-divider {
+    width: 100%;
+    height: 1px;
+    background: #e8e8e8;
+  }
+
+  .s5-number {
+    font-size: 6rem;
+    font-weight: 900;
+    color: #f0f0f0;
+    letter-spacing: -0.05em;
+    line-height: 1;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .s5-cta {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    padding: 16px 40px;
+    transition: opacity 0.15s;
+  }
+  .s5-cta:hover { opacity: 0.8; }
+
+  .s5-feature {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  .s5-border-item {
+    border: 1px solid #e8e8e8;
+    padding: 32px;
+  }
+  .s5-border-item:not(:first-child) {
+    border-left: none;
+  }
+</style>
+
+<Layout title="TheSmartBees — Automated Systems for B2B Growth">
+
+  <header class="s5-header fixed top-0 left-0 right-0 z-50">
+    <nav class="max-w-6xl mx-auto px-8 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2 font-bold text-black">
+        <img src="/bee-logo.png" alt="TheSmartBees" class="h-5 w-5 object-contain" />
+        TheSmartBees
+      </a>
+      <div class="hidden md:flex items-center gap-10">
+        <a href="#services" class="text-sm text-text-tertiary hover:text-black transition-colors">Services</a>
+        <a href="#case-studies" class="text-sm text-text-tertiary hover:text-black transition-colors">Results</a>
+        <a href="#how-it-works" class="text-sm text-text-tertiary hover:text-black transition-colors">Process</a>
+        <a href="#about" class="text-sm text-text-tertiary hover:text-black transition-colors">About</a>
+        <a
+          href="https://calendly.com/thesmartbees/60mn-1-1-meeting"
+          target="_blank" rel="noopener"
+          class="text-sm font-semibold text-black border border-black px-5 py-2 hover:bg-black hover:text-white transition-colors"
+        >Book a Call</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO: pure typography, max whitespace -->
+    <section class="pt-44 pb-32 md:pt-56 md:pb-40">
+      <div class="max-w-6xl mx-auto px-8">
+        <span class="s5-overline">Automation for B2B Companies</span>
+        <h1 class="s5-headline fade-in">
+          Your team is<br/>drowning in work<br/>that shouldn't<br/>exist.
+        </h1>
+        <div class="mt-12 max-w-xl fade-in">
+          <p class="text-xl text-text-secondary leading-relaxed">
+            Manual prospecting. Repetitive data work. Follow-ups that fall through.
+            We build automated systems that eliminate all of it — and we've run these
+            systems ourselves to generate over $1M in B2B revenue.
+          </p>
+        </div>
+        <div class="mt-12 flex items-center gap-8 fade-in">
+          <a href="https://calendly.com/thesmartbees/60mn-1-1-meeting" target="_blank" rel="noopener" class="s5-cta">
+            Book a 15-Minute Call →
+          </a>
+          <span class="text-sm text-text-muted">No commitment. No pitch.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS: full width, clean grid -->
+    <div class="border-y border-border fade-in">
+      <div class="max-w-6xl mx-auto px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-border">
+          {[
+            { n: "$750K+", l: "Operational savings" },
+            { n: "$1M+", l: "Our own revenue" },
+            { n: "Weeks", l: "To deployment" },
+            { n: "Zero", l: "Account managers" },
+          ].map(s => (
+            <div class="py-10 px-8 first:pl-0 last:pr-0">
+              <div class="s5-metric">{s.n}</div>
+              <p class="text-text-tertiary text-sm mt-2">{s.l}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-32">
+      <div class="max-w-6xl mx-auto px-8">
+        <span class="s5-overline">Services</span>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
+          <div>
+            <h2 class="text-4xl font-black text-black mb-8 leading-tight" style="letter-spacing:-0.03em">
+              Lead Generation
+            </h2>
+            <p class="text-text-secondary leading-relaxed mb-8">
+              A pipeline that identifies your ideal prospects, enriches their data, sends personalized outreach,
+              and follows up — automatically. Your pipeline runs without anyone manually prospecting.
+            </p>
+            <ul class="space-y-4">
+              {["ICP-based prospect identification and enrichment", "Personalized outreach sequences", "Automated follow-up management", "Real-time CRM pipeline updates"].map(f => (
+                <li class="flex items-start gap-4 text-sm text-text-secondary">
+                  <span class="text-text-muted shrink-0 pt-0.5">01</span>
+                  {f}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div class="md:border-l md:border-border md:pl-20">
+            <h2 class="text-4xl font-black text-black mb-8 leading-tight" style="letter-spacing:-0.03em">
+              Workflow<br/>Automation
+            </h2>
+            <p class="text-text-secondary leading-relaxed mb-8">
+              We audit your operations, identify the highest-cost manual processes, and replace them
+              with automated systems. Cost-impact estimate before we start. Tracked results after we deploy.
+            </p>
+            <ul class="space-y-4">
+              {["Workflow audit and cost-impact analysis", "Cross-department process automation", "ERP, CRM, and inventory integration", "Automated reporting and data sync"].map(f => (
+                <li class="flex items-start gap-4 text-sm text-text-secondary">
+                  <span class="text-text-muted shrink-0 pt-0.5">02</span>
+                  {f}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="s5-divider"></div>
+
+    <!-- RESULTS -->
+    <section id="case-studies" class="py-32">
+      <div class="max-w-6xl mx-auto px-8">
+        <span class="s5-overline">Results</span>
+        <h2 class="text-4xl font-black text-black mb-16" style="letter-spacing:-0.03em">Documented outcomes.</h2>
+        <div class="space-y-0 divide-y divide-border">
+          {[
+            {
+              tag: "Client", title: "Industrial Jewelry Manufacturer", metric: "$750K+", label: "operational savings",
+              body: "Every department on disconnected spreadsheets. We built a complete automation suite across database, logistics, ERP, CRM, and product catalogs. $750K in operational savings. The team now focuses on design and client strategy instead of data management."
+            },
+            {
+              tag: "Our Own Systems", title: "Automated B2B Sales Pipeline", metric: "$1M+", label: "in closed revenue",
+              body: "We built this for ourselves before offering it as a service. Automated prospecting, outreach, follow-up, and pipeline management. $1M+ in B2B revenue closed. The system we build for clients is the same system we depend on for our own revenue."
+            }
+          ].map(cs => (
+            <div class="py-16 grid grid-cols-1 md:grid-cols-4 gap-8">
+              <div>
+                <span class="s5-overline">{cs.tag}</span>
+                <div class="s5-metric">{cs.metric}</div>
+                <p class="text-text-tertiary text-sm mt-2">{cs.label}</p>
+              </div>
+              <div class="md:col-span-3 flex flex-col justify-center">
+                <h3 class="text-2xl font-bold text-black mb-4" style="letter-spacing:-0.02em">{cs.title}</h3>
+                <p class="text-text-secondary leading-relaxed max-w-2xl">{cs.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="s5-divider"></div>
+
+    <!-- HOW IT WORKS -->
+    <section id="how-it-works" class="py-32">
+      <div class="max-w-6xl mx-auto px-8">
+        <span class="s5-overline">Process</span>
+        <h2 class="text-4xl font-black text-black mb-16" style="letter-spacing:-0.03em">Three steps. Weeks to results.</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+          {[
+            { n: "01", title: "Discovery", sub: "15 minutes", desc: "You describe your workflows and time sinks. We identify what's automatable and give you a rough ROI estimate. No sales pitch." },
+            { n: "02", title: "Roadmap", sub: "Written plan", desc: "Documented deliverables, timelines, and cost-impact for each automation opportunity. You approve everything before we start." },
+            { n: "03", title: "Delivery", sub: "Weeks to live", desc: "We build, deploy, and monitor. We stay accountable to the outcomes we documented upfront." },
+          ].map(s => (
+            <div>
+              <span class="s5-number">{s.n}</span>
+              <h3 class="text-xl font-bold text-black mb-1">{s.title}</h3>
+              <p class="text-text-muted text-xs uppercase tracking-widest mb-5">{s.sub}</p>
+              <p class="text-text-secondary leading-relaxed text-sm">{s.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="s5-divider"></div>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-32">
+      <div class="max-w-6xl mx-auto px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
+          <div>
+            <span class="s5-overline">About</span>
+            <h2 class="text-4xl font-black text-black mb-8 leading-tight" style="letter-spacing:-0.03em">
+              We run what<br/>we sell.
+            </h2>
+            <p class="text-text-secondary leading-relaxed mb-6">
+              Before we offered lead generation automation as a service, we used it to generate $1M+ in
+              B2B revenue for our own business. No theories. Production systems, live results.
+            </p>
+            <p class="text-text-secondary leading-relaxed">
+              A small team. No account managers. You work directly with the person who builds your system.
+            </p>
+          </div>
+          <div class="flex items-start gap-6">
+            <img src="/portrait.jpeg" alt="Antoine Miniconi" class="w-24 h-24 rounded-full object-cover object-top shrink-0" />
+            <div class="pt-2">
+              <p class="font-bold text-black">Antoine Miniconi</p>
+              <p class="text-text-tertiary text-sm mb-4">Founder</p>
+              <p class="text-text-secondary text-sm leading-relaxed">
+                Built automated B2B sales infrastructure that generated over $1M in revenue before
+                turning it into a service. Designed and operated these systems himself.
+                That experience is what makes the difference.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="s5-divider"></div>
+    <section class="py-32">
+      <div class="max-w-6xl mx-auto px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <h2 class="text-5xl font-black text-black leading-tight" style="letter-spacing:-0.04em">
+            Is automation the<br/>right move for<br/>your business?
+          </h2>
+          <div>
+            <p class="text-text-secondary leading-relaxed mb-8">
+              15 minutes. We'll review your workflows, find the biggest opportunities,
+              and give you a straight answer on what automation would actually return.
+              If it's not worth it, we'll say so.
+            </p>
+            <a href="https://calendly.com/thesmartbees/60mn-1-1-meeting" target="_blank" rel="noopener" class="s5-cta">
+              Schedule My Free 15-Minute Call →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="s5-divider"></div>
+  <footer class="py-8">
+    <div class="max-w-6xl mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-text-muted">&copy; {new Date().getFullYear()} TheSmartBees. All rights reserved.</p>
+      <div class="flex items-center gap-6">
+        <a href="https://wa.me/525525192812" target="_blank" rel="noopener" class="text-sm text-text-muted hover:text-black transition-colors">WhatsApp</a>
+        <a href="mailto:antoine@thesmartbees.com" class="text-sm text-text-muted hover:text-black transition-colors">Email</a>
+      </div>
+    </div>
+  </footer>
+</Layout>
