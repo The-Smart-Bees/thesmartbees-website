@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/privacidad",
+      "destination": "/privacidad.pdf",
+      "permanent": true
+    }
+  ]
+}
